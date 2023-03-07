@@ -18,7 +18,7 @@ include 'emu8086.inc '
              mov bx,ax
              
              print 'Quatient'
-             mov dl,bh
+             mov dl,bl
              add dl,48
              mov ah,02h
              int 21h
@@ -33,7 +33,7 @@ include 'emu8086.inc '
              
              print 'Remainder'
              
-             mov dl,bl
+             mov dl,bh
              add dl,48
              mov ah,02h
              int 21h
