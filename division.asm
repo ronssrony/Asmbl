@@ -10,49 +10,35 @@ include 'emu8086.inc '
 
             main proc
              
-             mov cx,7 ;number of times I want to print 'hello mars'
+             mov al,13
+             mov bl,3
+             
+             div bl
+             
+             mov bx,ax
+             
+             print 'Quatient'
+             mov dl,bh
+             add dl,48
+             mov ah,02h
+             int 21h
              
              mov dl,10
              mov ah,02h
              int 21h
              
-             mov dl,13
+             mov dl,13 
              mov ah,02h
              int 21h
              
-             looping:
+             print 'Remainder'
              
-                   print 'HELLO MARS'
-                   mov dl,10
-                   mov ah,02h
-                   int 21h
-                   
-                   mov dl,13 
-                   mov ah,02h
-                   int 21h
-             
-              
-              
-              loop looping
-             
-             
-
-
-
-
-       main endp
-
-
-end main             print 'Remainder: '
-             mov dl,bh
+             mov dl,bl
              add dl,48
              mov ah,02h
              int 21h
-                
-                
-                
-                
-                
+             
+             
 
 
 
@@ -60,4 +46,13 @@ end main             print 'Remainder: '
        main endp
 
 
-end main
+end main     
+                
+                
+                
+                
+
+
+
+
+     
